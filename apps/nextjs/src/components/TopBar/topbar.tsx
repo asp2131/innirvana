@@ -15,7 +15,11 @@ const Header = () => {
 
   return (
     <header className="w-full p-4">
-      <div className="container mx-auto flex items-center justify-between md:items-start">
+      <div
+        className={`container mx-auto flex items-center justify-between ${
+          !isSignedIn ? "md:items-start" : "items-center"
+        }`}
+      >
         <motion.a
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -49,7 +53,9 @@ const Header = () => {
           </div>
         ) : (
           <div className="brutal-card bg-pink lg:hidden">
-            <p className="text-black">Sign In</p>
+            <Link href="/sign-in" className="text-black">
+              Sign In
+            </Link>
           </div>
         )}
 

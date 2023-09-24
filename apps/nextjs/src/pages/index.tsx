@@ -46,9 +46,19 @@ const Home: NextPage = () => {
       </Head>
       <main className="flex h-screen flex-col items-center bg-gradient-to-b from-[#635792] to-[#484979] text-white">
         <TopBar />
-        <div className="container flex flex-col items-center justify-center gap-12 px-4 py-8">
-          <div className="flex h-[60vh] justify-center overflow-y-scroll px-4 text-2xl"></div>
-        </div>
+        {/* Hero section */}
+        <section className="flex flex-col items-center justify-center gap-4">
+          {/* create row to put image on side of header */}
+          <img src="/Hero.png" alt="lotus" className="h-64 w-64 rounded-full	" />
+          <div className="flex flex-row items-center justify-center gap-4">
+            <h1 className="text-center text-4xl font-bold">
+              Welcome to inrvana.
+            </h1>
+          </div>
+          <p className="text-center text-2xl">
+            A tool to help you find your inner peace.
+          </p>
+        </section>
       </main>
     </>
   );
