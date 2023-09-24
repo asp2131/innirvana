@@ -6,37 +6,10 @@ import { trpc } from "../utils/trpc";
 import type { inferProcedureOutput } from "@trpc/server";
 import type { AppRouter } from "@acme/api";
 import { useAuth, UserButton } from "@clerk/nextjs";
-import Link from "next/link";
-import TopBar from "../components/TopBar/topbar";
-
-const PostCard: React.FC<{
-  post: inferProcedureOutput<AppRouter["post"]["all"]>[number];
-}> = ({ post }) => {
-  return (
-    <div className="max-w-2xl rounded-lg border-2 border-gray-500 p-4 transition-all hover:scale-[101%]">
-      <h2 className="text-2xl font-bold text-[hsl(280,100%,70%)]">
-        {post.title}
-      </h2>
-      <p>{post.content}</p>
-    </div>
-  );
-};
+import Image from "next/image";
+import TopBar from "../../components/TopBar/topbar";
 
 const Home: NextPage = () => {
-  //save user and token to db
-  // const { data: user } = useQuery(["user", userId], {
-  //   enabled: !!userId,
-  // });
-
-  //useEffect to checked if user is in db
-  // useEffect(() => {
-  //   if (user) {
-  //     console.log(user);
-  //   }
-  // }, [user]);
-
-  // In case the user signs out while on the page.
-
   return (
     <>
       <Head>
@@ -49,7 +22,11 @@ const Home: NextPage = () => {
         {/* Hero section */}
         <section className="flex flex-col items-center justify-center gap-4">
           {/* create row to put image on side of header */}
-          <img src="/Hero.png" alt="lotus" className="h-64 w-64 rounded-full	" />
+          <Image
+            src="/Hero.png"
+            alt="lotus"
+            className="h-64 w-64 rounded-full	"
+          />
           <div className="flex flex-row items-center justify-center gap-4">
             <h1 className="text-center text-4xl font-bold">
               Welcome to inrvana.
@@ -64,47 +41,9 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
-
-const AuthShowcase: React.FC = () => {
-  const { isSignedIn } = useAuth();
-  const { data: secretMessage } = trpc.auth.getSecretMessage.useQuery(
-    undefined,
-    { enabled: !!isSignedIn },
-  );
-
-  return (
-    <div className="flex flex-col items-center justify-center gap-4">
-      {isSignedIn && (
-        <>
-          <p className="text-center text-2xl text-white">
-            {secretMessage && (
-              <span>
-                {" "}
-                {secretMessage} click the user button!
-                <br />
-              </span>
-            )}
-          </p>
-          <div className="flex items-center justify-center">
-            <UserButton
-              appearance={{
-                elements: {
-                  userButtonAvatarBox: {
-                    width: "3rem",
-                    height: "3rem",
-                  },
-                },
-              }}
-            />
-          </div>
-        </>
-      )}
-      {!isSignedIn && (
-        <p className="text-center text-2xl text-white">
-          <Link href="/sign-in">Sign In</Link>
-        </p>
-      )}
-    </div>
-  );
+Home.getInitialProps = ({ res, err }: any) => {
+  const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
+  return { statusCode };
 };
+
+export default Home;

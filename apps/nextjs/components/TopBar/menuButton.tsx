@@ -1,13 +1,13 @@
 import React from "react";
 import { motion, Transition, SVGMotionProps } from "framer-motion";
 
-interface Props extends SVGMotionProps {
-  isOpen?: boolean;
-  color?: string;
-  strokeWidth?: string | number;
-  transition?: Transition;
-  lineProps?: any;
-}
+// interface Props extends SVGMotionProps {
+//   isOpen?: boolean;
+//   color?: string;
+//   strokeWidth?: string | number;
+//   transition?: Transition;
+//   lineProps?: any;
+// }
 
 const MenuButton = ({
   isOpen = false,
@@ -18,7 +18,7 @@ const MenuButton = ({
   transition = null,
   lineProps = null,
   ...props
-}: Props) => {
+}: any) => {
   const variant = isOpen ? "opened" : "closed";
   const top = {
     closed: {

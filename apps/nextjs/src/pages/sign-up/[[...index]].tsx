@@ -13,4 +13,9 @@ const SignUpPage = () => (
   </main>
 );
 
+SignUpPage.getInitialProps = ({ res, err }: any) => {
+  const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
+  return { statusCode };
+};
+
 export default SignUpPage;
