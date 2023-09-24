@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+span {
+}
+
+.input {
+  height: 40px;
+  border: 1px solid hsla(0, 0%, 100%, 0.3);
+  padding: 0 9px;
+  width: 100%;
+  border-radius: 30px;
+  transition-duration: 222ms;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  text-align: center;
+  background: transparent;
+}
+
+.brutal-card {
+  border-radius: 0.5rem;
+  border: 3px solid black;
+  filter: drop-shadow(7px 7px 0 rgb(0 0 0 / 1));
+  transition: all;
+  padding: 1rem;
+  transition-duration: 0.5s;
+  animation: ease-in-out;
+}
+
+.logo {
+  filter: brightness(1.775);
+}
