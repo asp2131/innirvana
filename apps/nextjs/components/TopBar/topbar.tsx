@@ -4,7 +4,6 @@ import { UserButton, useAuth } from "@clerk/nextjs";
 import Image from "next/image";
 import { MenuButton } from "./menuButton";
 import Overlay from "./overlay";
-import Link from "next/link";
 
 const menuButtonStyle = {
   marginLeft: "2rem",

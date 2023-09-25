@@ -1,13 +1,15 @@
 // create overlay for topbar
 import React, { useEffect } from "react";
-import Link from "next/link";
 import { MenuButton } from "./menuButton";
+import { UserButton, useAuth } from "@clerk/nextjs";
 
 const menuButtonStyle = {
   marginLeft: "2rem",
 };
 
 const Overlay = ({ isOpen, toggleNav }: any) => {
+  const { isSignedIn } = useAuth();
+
   return (
     <div className={`mobile-nav ${isOpen ? "open" : ""}`}>
       <div className="nav-toggle" onClick={toggleNav}>
@@ -27,18 +29,34 @@ const Overlay = ({ isOpen, toggleNav }: any) => {
         />
       </div>
       <nav>
-        <ul>
+        <ul className="nav-list">
           <li>
             <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">Membership</a>
           </li>
           <li>
             <a href="#">About</a>
           </li>
           <li>
-            <a href="#">Services</a>
+            <a href="#">Contact</a>
           </li>
           <li>
-            <a href="#">Contact</a>
+            {isSignedIn ? (
+              <UserButton
+                appearance={{
+                  elements: {
+                    userButtonAvatarBox: {
+                      width: "3rem",
+                      height: "3rem",
+                    },
+                  },
+                }}
+              />
+            ) : (
+              <a href="/sign-in">Sign In</a>
+            )}
           </li>
         </ul>
       </nav>
@@ -50,7 +68,7 @@ const Overlay = ({ isOpen, toggleNav }: any) => {
           left: 0;
           width: 100%;
           height: 100%;
-          background-color: rgba(255, 255, 255, 0.9);
+          background-color: rgba(255, 255, 255, 0.69);
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -68,6 +86,10 @@ const Overlay = ({ isOpen, toggleNav }: any) => {
           right: 0;
           padding: 20px;
           top: 20px;
+        }
+
+        .nav-list {
+          padding-top: 8ch;
         }
 
         .bar {
@@ -97,16 +119,21 @@ const Overlay = ({ isOpen, toggleNav }: any) => {
         ul {
           list-style: none;
           padding: 0;
+          display: flex;
+          flex-direction: column;
         }
 
         li {
           margin: 10px 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         a {
           text-decoration: none;
           color: #333;
-          font-size: 18px;
+          font-size: 24px;
         }
       `}</style>
     </div>
