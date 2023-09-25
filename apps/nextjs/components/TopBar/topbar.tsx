@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { UserButton, useAuth } from "@clerk/nextjs";
 import Image from "next/image";
 import { MenuButton } from "./menuButton";
+import Overlay from "./overlay";
 import Link from "next/link";
 
 const menuButtonStyle = {
@@ -13,51 +14,60 @@ const Header = () => {
   const { isSignedIn } = useAuth();
   const [isOpen, setOpen] = useState(false);
 
+  const toggleNav = () => {
+    setOpen(!isOpen);
+  };
+
   return (
-    <header className="w-full p-4">
+    <header className="header bg: w-full bg-white p-1">
       <div
         className={`container mx-auto flex items-center justify-between ${
           !isSignedIn ? "md:items-start" : "items-center"
         }`}
       >
+        {isOpen && (
+          <>
+            <Overlay isOpen={isOpen} toggleNav={toggleNav} />
+          </>
+        )}
         <motion.a
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           href="#"
+          className="flex items-center justify-start"
         >
           <Image
             priority
             src="/the_logo.svg"
-            height={120}
-            width={120}
+            height={100}
+            width={100}
             alt="Follow us on Twitter"
             className="logo"
           />
 
-          {/* <h1 className="text-2xl font-semibold text-white">Your App Name</h1> */}
+          <h1 className="text-midnight hidden text-xl lg:block">inrvana.</h1>
         </motion.a>
-        {isSignedIn ? (
-          <div className="lg:hidden">
-            <MenuButton
-              isOpen={isOpen}
-              onClick={() => setOpen(!isOpen)}
-              strokeWidth="8"
-              color="#CCB9E9"
-              lineProps={{ strokeLinecap: "round" }}
-              transition={{ type: "spring", stiffness: 260, damping: 20 }}
-              width="24"
-              height="24"
-              style={menuButtonStyle}
-            />
-          </div>
-        ) : (
-          <div className="brutal-card bg-pink lg:hidden">
-            <Link href="/sign-in" className="text-black">
-              Sign In
-            </Link>
-          </div>
-        )}
+
+        <div className="flex lg:hidden">
+          <MenuButton
+            isOpen={isOpen}
+            onClick={() => setOpen(!isOpen)}
+            strokeWidth="8"
+            color="#484979"
+            lineProps={{ strokeLinecap: "round" }}
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+            width="24"
+            height="24"
+            style={menuButtonStyle}
+          />
+        </div>
+
+        {/* <div className="brutal-card bg-pink lg:hidden">
+          <Link href="/sign-in" className="text-black">
+            Sign In
+          </Link>
+        </div> */}
 
         {/* <motion.div
           initial={{ opacity: 0, x: -20 }}

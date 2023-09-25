@@ -26,5 +26,22 @@
 }
 
 .logo {
-  filter: brightness(1.775);
+  filter: brightness(0.775);
+}
+
+.header {
+  padding: 0 1.25rem;
+  background-color: transparent;
+  /* height: 6.5rem; */
+  /* add bottom shadow */
+}
+
+/* on mobile */
+@media (max-width: 640px) {
+  .header {
+    padding: 0 1.25rem;
+    /* height: 6.5rem; */
+    /* add bottom shadow */
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  }
 }
