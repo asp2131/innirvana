@@ -23,6 +23,8 @@ const Home: NextPage = () => {
         <section className="flex flex-col items-center justify-center gap-4">
           {/* create row to put image on side of header */}
           <Image
+            width={256}
+            height={256}
             src="/Hero.png"
             alt="lotus"
             className="h-64 w-64 rounded-full	"
