@@ -30,26 +30,14 @@ const Overlay = ({ isOpen, toggleNav }: any) => {
       </div>
       <nav>
         <ul className="nav-list">
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">Membership</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-          <li>
+          <li className="pt-5">
             {isSignedIn ? (
               <UserButton
                 appearance={{
                   elements: {
                     userButtonAvatarBox: {
-                      width: "3rem",
-                      height: "3rem",
+                      width: "5rem",
+                      height: "5rem",
                     },
                   },
                 }}
@@ -57,6 +45,26 @@ const Overlay = ({ isOpen, toggleNav }: any) => {
             ) : (
               <a href="/sign-in">Sign In</a>
             )}
+          </li>
+          <li>
+            <span className="brutal-card bg-bubble-gum">
+              <a href="#">home</a>
+            </span>
+          </li>
+          <li>
+            <span className="brutal-card bg-bubble-gum">
+              <a href="#">membership</a>
+            </span>
+          </li>
+          <li>
+            <span className="brutal-card bg-bubble-gum">
+              <a href="#">about</a>
+            </span>
+          </li>
+          <li>
+            <span className="brutal-card bg-bubble-gum">
+              <a href="#">contact</a>
+            </span>
           </li>
         </ul>
       </nav>
@@ -134,6 +142,10 @@ const Overlay = ({ isOpen, toggleNav }: any) => {
           text-decoration: none;
           color: #333;
           font-size: 24px;
+        }
+
+        span {
+          aspect-ratio: 5;
         }
       `}</style>
     </div>
