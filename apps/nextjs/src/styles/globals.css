@@ -61,6 +61,11 @@
   animation: ease-in-out;
 }
 
+.progress {
+  /* background: linear-gradient(to right, red 50%, blue 50%) left; */
+  background-size: 200% 100%;
+}
+
 /* stopwatch */
 
 .stopwatch-time {
