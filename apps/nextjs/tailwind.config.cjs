@@ -17,6 +17,7 @@ module.exports = {
       black: "#000000",
       myRed: "#cb5c5b",
       yella: "#f4c38e",
+      green: "#2D6327",
     },
   },
 };

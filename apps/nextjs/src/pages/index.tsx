@@ -6,6 +6,7 @@ import type { inferProcedureOutput } from "@trpc/server";
 import type { AppRouter } from "@acme/api";
 import Image from "next/image";
 import TopBar from "../../components/TopBar/topbar";
+import Dashboard from "../../components/Dashboard/";
 import { useAuth } from "@clerk/nextjs";
 
 const Home: NextPage = () => {
@@ -21,7 +22,11 @@ const Home: NextPage = () => {
       <main className="flex h-screen flex-col items-center bg-gradient-to-b from-[#f3c38f] to-[#484979] text-white">
         <TopBar />
         {/* Hero section */}
-        {isSignedIn && <></>}
+        {isSignedIn && (
+          <>
+            <Dashboard />
+          </>
+        )}
         {!isSignedIn && (
           <section className="flex flex-col items-center justify-center gap-4 pt-8">
             {/* create row to put image on side of header */}
