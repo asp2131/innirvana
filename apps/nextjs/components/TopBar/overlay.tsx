@@ -82,6 +82,7 @@ const Overlay = ({ isOpen, toggleNav }: any) => {
           align-items: center;
           transform: translateX(-100%);
           transition: transform 0.3s ease-in-out;
+          z-index: 1;
         }
 
         .mobile-nav.open {
