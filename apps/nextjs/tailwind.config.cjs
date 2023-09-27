@@ -10,7 +10,7 @@ module.exports = {
       purple: "#3f3cbb",
       midnight: "#484979",
       metal: "#565584",
-      tahiti: "#3ab7bf",
+      tahiti: "#7DCAF0",
       pink: "#ffdeec",
       "bubble-gum": "#CCB9E9",
       bermuda: "#78dcca",

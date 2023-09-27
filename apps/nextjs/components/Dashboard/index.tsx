@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Stopwatch from "../StopWatch";
 import { useWindowSize } from "../../src/hooks/useIsMobile";
-import medi_girl_1 from "../../public/medi_girl_1.json";
+import medi_girl_1 from "../../public/medi_girl_2.json";
 import Lottie from "lottie-react";
 
 const Dashboard = () => {
@@ -11,13 +11,13 @@ const Dashboard = () => {
   return (
     <div className="dash">
       {/* <Stopwatch /> */}
-      <section className="dash-card bg-plum ">
+      <section className="dash-card bg-tahiti ">
         <br />
         <Lottie animationData={medi_girl_1} loop={true} />
         <Stopwatch />
         <br />
         <div className="p-2 pt-5 text-start text-xl font-bold">
-          <h1 className="place-self-center text-white">exp.</h1>
+          <h1 className="place-self-center text-black">lvl 1</h1>
         </div>
         <section
           style={{
