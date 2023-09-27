@@ -31,8 +31,7 @@ const Dashboard = () => {
         ></section>
       </section>
 
-      <section className="dash-card hidden bg-white lg:block"></section>
-      {/* <section className="dash-card hidden bg-white lg:block"></section> */}
+      {/* <section className="dash- hidden bg-white lg:block"></section> */}
     </div>
   );
 };
