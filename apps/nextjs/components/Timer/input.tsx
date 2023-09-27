@@ -18,10 +18,13 @@ const StyledInput = styled.input<{ width?: string }>`
   border-radius: 4px;
   color: white;
   width: ${({ width }) => width};
-  /* padding: 0 16px; */
   font-size: 2.4rem;
   margin-bottom: 10px;
   outline: none;
+
+  @media (max-width: 768px) {
+    padding: 0 16px;
+  }
 `;
 
 const Input: React.FC<InputProps> = ({

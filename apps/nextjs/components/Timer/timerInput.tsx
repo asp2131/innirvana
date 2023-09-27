@@ -38,6 +38,10 @@ const StyledButtonWrapper = styled.div`
 
 const StyledInfoText = styled.span`
   font-size: 14px;
+
+  @media (max-width: 768px) {
+    padding: 0 10px;
+  }
 `;
 
 const StyledTwoDots = styled.span`

@@ -136,8 +136,9 @@
     place-self: center;
   }
 
-  .dash-second-half {
-    place-self: center;
+  .dash-card {
+    aspect-ratio: 1.4;
+    padding: revert;
   }
 
   .stopwatch-buttons {
