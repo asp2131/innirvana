@@ -20,7 +20,7 @@ const StyledButton = styled.button<{ color: ColorType; disabled?: boolean }>`
   text-transform: uppercase;
   transition: all 0.2s ease-in-out;
   border: 4px solid
-    ${({ color }) => (color === "primary" ? "#205530" : "#3b3b3b")};
+    ${({ color }) => (color === "primary" ? "#EBD99B" : "#3b3b3b")};
   cursor: ${({ disabled }) => (disabled === true ? "not-allowed" : "pointer")};
   opacity: ${({ disabled }) => (disabled === true ? "0.3" : "1")};
 

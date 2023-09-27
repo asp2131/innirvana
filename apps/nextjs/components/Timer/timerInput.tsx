@@ -28,12 +28,17 @@ const StyledInputsWrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-right: 20px;
+
+  @media (max-width: 768px) {
+    padding: 0 10px;
+  }
 `;
 
 const StyledButtonWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px 0px;
+  padding: 0 10px;
 `;
 
 const StyledInfoText = styled.span`
