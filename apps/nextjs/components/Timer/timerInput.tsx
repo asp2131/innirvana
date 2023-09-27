@@ -27,10 +27,9 @@ const StyledInputsWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 20px;
 
   @media (max-width: 768px) {
-    padding: 0 10px;
+    /* padding: 0 10px; */
   }
 `;
 

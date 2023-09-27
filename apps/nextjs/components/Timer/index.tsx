@@ -20,6 +20,7 @@ const StyledCountdownTimerWrappeer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-top: 5px;
 `;
 
 const StyledTimeOutput = styled.h1`

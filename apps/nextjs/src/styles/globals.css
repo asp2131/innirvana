@@ -137,8 +137,9 @@
   }
 
   .dash-card {
-    aspect-ratio: 1.4;
-    padding: revert;
+    width: 90%;
+    aspect-ratio: 2;
+    position: fixed;
   }
 
   .stopwatch-buttons {
@@ -158,5 +159,12 @@
   .anim {
     display: flex;
     filter: none !important;
+  }
+}
+
+/* on tablet */
+@media (min-width: 884px) {
+  .dash-card {
+    position: fixed;
   }
 }
