@@ -8,7 +8,7 @@ import { IsSsrMobileContext } from "../utils/mobileContext";
 type MyAppProps = AppProps & { isSsrMobile?: boolean };
 
 const MyApp: AppType<MyAppProps> = ({ Component, pageProps }) => {
-  const { isSsrMobile, ...rest } = pageProps;
+  const { isSsrMobile = false, ...rest } = pageProps;
   if (isSsrMobile === null) return null;
   return (
     <IsSsrMobileContext.Provider value={isSsrMobile}>

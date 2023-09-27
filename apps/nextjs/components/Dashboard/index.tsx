@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import Progressbar from "../Progress";
 import Stopwatch from "../StopWatch";
 import { useWindowSize } from "../../src/hooks/useIsMobile";
 
