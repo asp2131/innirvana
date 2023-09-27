@@ -18,6 +18,7 @@ module.exports = {
       myRed: "#cb5c5b",
       yella: "#f4c38e",
       green: "#2D6327",
+      plum: "#30043A",
     },
   },
 };

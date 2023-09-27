@@ -40,18 +40,18 @@ const Stopwatch = () => {
 
   return (
     <div className="stopwatch-container">
-      <p className="stopwatch-time text-6xl">
+      <p className="stopwatch-time text-6xl text-white">
         {hours}:{minutes.toString().padStart(2, "0")}:
         {seconds.toString().padStart(2, "0")}
         {/* {milliseconds.toString().padStart(2, "0")} */}
       </p>
       <div className="stopwatch-buttons">
-        <button className="brutal-card bg-green" onClick={startAndStop}>
+        <div className="brutal-card bg-green" onClick={startAndStop}>
           {isRunning ? "Pause" : "Start"}
-        </button>
-        <button className="brutal-card bg-myRed" onClick={reset}>
+        </div>
+        <div className="brutal-card bg-myRed" onClick={reset}>
           Reset
-        </button>
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import Stopwatch from "../StopWatch";
 import { useWindowSize } from "../../src/hooks/useIsMobile";
+import medi_girl_1 from "../../public/medi_girl_1.json";
+import Lottie from "lottie-react";
 
 const Dashboard = () => {
   const { width: windowWidth } = useWindowSize();
@@ -9,18 +11,28 @@ const Dashboard = () => {
   return (
     <div className="dash">
       {/* <Stopwatch /> */}
-      <section className="dash-card bg-white"></section>
-      <section className="dash-card bg-white"></section>
-      <section
-        style={{
-          background: isBrowserMobile
-            ? `linear-gradient(to right, #b76af9 50%, blue 50%) left`
-            : `linear-gradient(to top, #82F96A 50%, grey 50%) bottom`,
-        }}
-        className="dash-card progress"
-      ></section>
+      <section className="dash-card bg-plum ">
+        <br />
+        <Lottie animationData={medi_girl_1} loop={true} />
+        <Stopwatch />
+        <br />
+        <div className="p-2 pt-5 text-start text-xl font-bold">
+          <h1 className="place-self-center text-white">exp.</h1>
+        </div>
+        <section
+          style={{
+            display: "flex",
+            alignItems: "center",
+            background: isBrowserMobile
+              ? `linear-gradient(to right, #b76af9 50%, slate 50%) left`
+              : `linear-gradient(to right, #82F96A 50%, grey 50%) left`,
+          }}
+          className="progress-card  progress"
+        ></section>
+      </section>
+
       <section className="dash-card hidden bg-white lg:block"></section>
-      <section className="dash-card hidden bg-white lg:block"></section>
+      {/* <section className="dash-card hidden bg-white lg:block"></section> */}
     </div>
   );
 };
